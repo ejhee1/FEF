@@ -77,11 +77,12 @@ class App extends Component {
                 <TableCell>생년월일</TableCell>
                 <TableCell>성별</TableCell>
                 <TableCell>직업</TableCell>
+                <TableCell>설정</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {this.state.customers ? this.state.customers.map(c => {  // map 함수: 특정 배열의 원소에 접근이 효과적
-              return ( <Customer key={c.id} id={c.id} image={c.image} name={c.name} birthday={c.birthday} gender={c.gender} job={c.job}/>);
+              return ( <Customer stateRefresh={this.stateRefresh} key={c.id} id={c.id} image={c.image} name={c.name} birthday={c.birthday} gender={c.gender} job={c.job}/>);
             }) : 
             <TableRow>
               <TableCell colSpan="6" align="center">
